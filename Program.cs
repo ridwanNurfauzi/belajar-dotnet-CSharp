@@ -1,45 +1,30 @@
-﻿class Bentuk
+﻿abstract class Bentuk
 {
-    protected double luas;
-    protected double keliling;
-
-    public double Luas
-    {
-        get { return luas; }
-        set { luas = value; }
-    }
-    public double Keliling
-    {
-        get { return keliling; }
-        set { keliling = value; }
-    }
+    public abstract void TulisKeliling();
+    public abstract void TulisLuas();
 }
 
-class Segitiga : Bentuk
+class Persegi : Bentuk
 {
-    public Segitiga(double alas, double tinggi)
+    public Persegi(double sisi)
     {
-        this.alas = alas;
-        this.tinggi = tinggi;
-
-        luas = alas * tinggi / 2;
-        keliling = Math.Sqrt(Math.Pow(alas, 2) + Math.Pow(tinggi, 2));
+        this.sisi = sisi;
+        luas = sisi * sisi;
     }
 
-    private double alas, tinggi;
-}
+    private double sisi;
 
-class Lingkaran : Bentuk
-{
-    public Lingkaran(double r)
+    private double luas;
+
+    public override void TulisLuas()
     {
-        this.r = r;
-
-        luas = Math.PI * Math.Pow(r, 2);
-        keliling = Math.PI * r * 2;
+        Console.WriteLine($"Luas perseginya adalah {luas}");
     }
 
-    private double r;
+    public override void TulisKeliling()
+    {
+        throw new NotImplementedException();
+    }
 }
 
 namespace BelajarDotnetCSharp
@@ -48,13 +33,9 @@ namespace BelajarDotnetCSharp
     {
         static void Main(string[] args)
         {
-            var segitiga_1 = new Segitiga(4, 3);
-            Console.WriteLine($"Keliling segitiga = {segitiga_1.Keliling}");
-            Console.WriteLine($"Luas segitiga = {segitiga_1.Luas}");
-
-            var lingkaran_1 = new Lingkaran(7);
-            Console.WriteLine($"Luas lingkaran = {lingkaran_1.Luas}");
-            Console.WriteLine($"Keliling lingkaran = {lingkaran_1.Keliling}");
+            var persegi_1 = new Persegi(4);
+            persegi_1.TulisLuas();
+            persegi_1.TulisKeliling(); // Ini akan error
         }
     }
 }
