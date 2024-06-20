@@ -1,5 +1,12 @@
 ﻿class Mobil
 {
+    // Contoh konstruktor pada class
+    public Mobil(string warna, int kecepatan)
+    { 
+        this.warna = warna;
+        this.kecepatan = kecepatan;
+    }
+
     // Ini adalah property
     int kecepatan;
     string warna;
@@ -21,6 +28,7 @@ namespace BelajarDotnetCSharp
     {
         static void Main(string[] args)
         {
+            Mobil mobil1 = new Mobil("Merah", 200);
         }
     }
 }
