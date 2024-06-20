@@ -1,26 +1,45 @@
-﻿class Mobil
+﻿class Bentuk
 {
-    // Contoh konstruktor pada class
-    public Mobil(string warna, int kecepatan)
-    { 
-        this.warna = warna;
-        this.kecepatan = kecepatan;
-    }
+    protected double luas;
+    protected double keliling;
 
-    protected int kecepatan;
-    public string warna;
-
-    // Ini adalah method
-    public void Maju()
+    public double Luas
     {
-        Console.WriteLine("Mobil maju");
+        get { return luas; }
+        set { luas = value; }
     }
-    public void Mundur()
+    public double Keliling
     {
-        Console.WriteLine("Mobil mundur");
+        get { return keliling; }
+        set { keliling = value; }
+    }
+}
+
+class Segitiga : Bentuk
+{
+    public Segitiga(double alas, double tinggi)
+    {
+        this.alas = alas;
+        this.tinggi = tinggi;
+
+        luas = alas * tinggi / 2;
+        keliling = Math.Sqrt(Math.Pow(alas, 2) + Math.Pow(tinggi, 2));
     }
 
+    private double alas, tinggi;
+}
 
+class Lingkaran : Bentuk
+{
+    public Lingkaran(double r)
+    {
+        this.r = r;
+
+        luas = Math.PI * Math.Pow(r, 2);
+        keliling = Math.PI * r * 2;
+    }
+
+    private double r;
 }
 
 namespace BelajarDotnetCSharp
@@ -29,7 +48,13 @@ namespace BelajarDotnetCSharp
     {
         static void Main(string[] args)
         {
-            Mobil mobil1 = new Mobil("Merah", 200);
+            var segitiga_1 = new Segitiga(4, 3);
+            Console.WriteLine($"Keliling segitiga = {segitiga_1.Keliling}");
+            Console.WriteLine($"Luas segitiga = {segitiga_1.Luas}");
+
+            var lingkaran_1 = new Lingkaran(7);
+            Console.WriteLine($"Luas lingkaran = {lingkaran_1.Luas}");
+            Console.WriteLine($"Keliling lingkaran = {lingkaran_1.Keliling}");
         }
     }
 }
