@@ -4,25 +4,12 @@
     {
         static void Main(string[] args)
         {
-            // Value atau nilai pada variabel dengan const tidak dapat diubah
-            const string namaDepan = "M. Ridwan";
-            string namaBelakang = "Nurfauzi";
-            int umur = 17;
-            double beratBadan = 59.5;
-            char jk = 'l';
-            bool sudahLulus = true;
+            Console.Write("Masukkan nama Anda : ");
 
-            // Pengubahan nilai pada variabel
-            umur = 18;
+            // Gunakan fungsi ReadLine() untuk mengambil masukan data dari console
+            var nama = Console.ReadLine();
 
-            Console.WriteLine("==============Biodata==============\n");
-
-            // Menampilkan nilai dari variabel
-            Console.WriteLine($"Nama Lengkap : {namaDepan} {namaBelakang}");
-            Console.WriteLine($"Umur : {umur} tahun");
-            Console.WriteLine("Jenis Kelamin : " + jk);
-            Console.WriteLine($"Berat Badan : {beratBadan} kg");
-            Console.WriteLine("Sudah Lulus : " + sudahLulus);
+            Console.WriteLine($"Halo, {nama}.");
         }
     }
 }
