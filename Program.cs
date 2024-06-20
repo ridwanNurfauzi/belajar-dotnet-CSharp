@@ -1,7 +1,11 @@
-﻿abstract class Bentuk
+﻿class Bentuk
 {
-    public abstract void TulisKeliling();
-    public abstract void TulisLuas();
+    public virtual void TulisKeliling(){
+        Console.WriteLine("Tidak ada keliling.");
+    }
+    public virtual void TulisLuas(){
+        Console.WriteLine("Tidak ada luas");
+    }
 }
 
 class Persegi : Bentuk
@@ -20,11 +24,6 @@ class Persegi : Bentuk
     {
         Console.WriteLine($"Luas perseginya adalah {luas}");
     }
-
-    public override void TulisKeliling()
-    {
-        throw new NotImplementedException();
-    }
 }
 
 namespace BelajarDotnetCSharp
@@ -35,7 +34,7 @@ namespace BelajarDotnetCSharp
         {
             var persegi_1 = new Persegi(4);
             persegi_1.TulisLuas();
-            persegi_1.TulisKeliling(); // Ini akan error
+            persegi_1.TulisKeliling();
         }
     }
 }
