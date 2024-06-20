@@ -1,28 +1,45 @@
-﻿namespace BelajarDotnetCSharp
+﻿// method
+namespace BelajarDotnetCSharp
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int[] intArr = [1, 2, 3, 4, 5];
-            string[] stringArr = ["teks 1", "teks 2", "teks 3"];
+            // Contoh pemanggilan method
+            ContohMethod();
 
-            Console.WriteLine(stringArr[0]); // output: teks 1
+            KatakanHalo("Kk Ridwn");
 
-            // Contoh perulangan pada array
-            foreach (var val in intArr)
-            {
-                Console.WriteLine($"val = {val}");
-            }
+            Perkenalan("Kk");
 
-            // Contoh array 2 dimensi
-            int[][] matriks = [
-                [1, 2, 3],
-                [4, 5, 6],
-                [7, 8, 9]
-            ];
+            // Contoh pemangilan method dengan argumen bernama
+            Perkenalan(salam: "Hi",nama: "Ridwan");
 
-            Console.WriteLine(matriks[2][1]); // output: 8
+            Console.WriteLine(Penjumlahan(1, 2)); // output: 3
+        }
+
+        static void ContohMethod()
+        {
+            Console.WriteLine("Ini adalah contoh method.");
+        }
+
+        // Contoh method dengan parameter
+        static void KatakanHalo(string nama)
+        {
+            Console.WriteLine($"Halo, {nama}.");
+        }
+
+        // Contoh method dengan nilai parameter default
+        static void Perkenalan(string nama, string salam = "Assalaamu'alaikum" /* Parameter salam tidak wajib diisi saat pemanggilan */)
+        {
+            Console.WriteLine($"{salam},");
+            Console.WriteLine($"Perkenalkan, nama saya {nama}.");
+        }
+
+        // Contoh method dengan pengembalian nilai
+        static int Penjumlahan(int a, int b)
+        {
+            return a + b;
         }
     }
 }
