@@ -1,31 +1,28 @@
-﻿// Perulangan
-namespace BelajarDotnetCSharp
+﻿namespace BelajarDotnetCSharp
 {
     class Program
     {
         static void Main(string[] args)
         {
-            for (int i = 0; i < 7; i += 2)
+            int[] intArr = [1, 2, 3, 4, 5];
+            string[] stringArr = ["teks 1", "teks 2", "teks 3"];
+
+            Console.WriteLine(stringArr[0]); // output: teks 1
+
+            // Contoh perulangan pada array
+            foreach (var val in intArr)
             {
-                Console.WriteLine($"Perulangan ke-{i}.");
+                Console.WriteLine($"val = {val}");
             }
 
-            int n = 10;
-            while (n > 0)
-            {
-                Console.WriteLine($"Hitung mundur {n}.");
-                n--;
-            }
+            // Contoh array 2 dimensi
+            int[][] matriks = [
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]
+            ];
 
-            Console.Write("Lakukan perulangan do/while (y/t)?");
-            var txt = Console.ReadLine();
-
-            if (txt == "y")
-                do
-                {
-                    Console.Write("Ulangi (y/t)?");
-                    txt = Console.ReadLine();
-                } while (txt == "y");
+            Console.WriteLine(matriks[2][1]); // output: 8
         }
     }
 }
