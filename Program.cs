@@ -7,19 +7,20 @@
         this.kecepatan = kecepatan;
     }
 
-    // Ini adalah property
-    int kecepatan;
-    string warna;
+    protected int kecepatan;
+    public string warna;
 
     // Ini adalah method
-    void Maju()
+    public void Maju()
     {
         Console.WriteLine("Mobil maju");
     }
-    void Mundur()
+    public void Mundur()
     {
         Console.WriteLine("Mobil mundur");
     }
+
+
 }
 
 namespace BelajarDotnetCSharp
